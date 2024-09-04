@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results for {{ url }}</h1>
+
+    <h2>Alerts</h2>
+    {% if alerts %}
+        <table border="1">
+            <tr>
+                <th>Risk Level</th>
+                <th>URL</th>
+                <th>Description</th>
+            </tr>
+            {% for alert in alerts %}
+            <tr>
+                <td>{{ alert.risk }}</td>
+                <td>{{ alert.url }}</td>
+                <td>{{ alert.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No alerts found.</p>
+    {% endif %}
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

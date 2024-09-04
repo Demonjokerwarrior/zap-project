@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP ZAP Scanner</title>
+</head>
+<body>
+    <h1>OWASP ZAP Web Scanner</h1>
+
+    <form action="{{ url_for('scan') }}" method="POST">
+        <label for="url">Enter URL to scan:</label>
+        <input type="text" id="url" name="url" required>
+        <br><br>
+        <button type="submit" name="scan_type" value="spider">Start Spider Scan</button>
+        <button type="submit" name="scan_type" value="active">Start Active Scan</button>
+    </form>
+</body>
+</html>
